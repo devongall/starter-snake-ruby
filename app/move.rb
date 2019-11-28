@@ -12,6 +12,7 @@ def move(board)
   end
   #pp board
   #pp board[:board][:snakes]
+  occupied_spaces = occupied_spaces.uniq
   pp occupied_spaces
   { move: :right }
 end
