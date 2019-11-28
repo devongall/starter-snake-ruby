@@ -52,6 +52,8 @@ def move(board)
   #Go This direction
   pp "Best Food: " +  best_food.to_s
   pp moves
+  pp best_food[:x]
+  pp head_position[:x]
   best_move = moves[0]
   if best_food[:x] > head_position[:x] and moves.include?(:right)
   	best_move = :right
