@@ -49,10 +49,22 @@ def move(board)
   		min_food_distance = food_distance
   		best_food = food_position
   	end
-  		#Go This direction
+  		
   end
+  #Go This direction
   pp "Best Food: " +  best_food.to_s
+  best_move = moves[0]
+  if best_food[:x] > head_position[:x] and moves.include?(:right)
+  	best_move = :right
+  elsif best_food[:x] < head_position[:x] and moves.include?(:left)
+  	best_move = :left
+  elsif best_food[:y] < head_position[:y] and moves.include?(:up)
+  	best_move = :up
+  elsif best_food[:y] > head_position[:y] and moves.include?(:down)
+  	best_move = :down
+  end
+
   #Reply with my move
 
-  { move: moves[0] }
+  { move: best_move }
 end
