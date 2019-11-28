@@ -2,7 +2,6 @@
 # View docs at https://docs.battlesnake.com/snake-api for example payloads.
 def move(board)
   puts "Hello, logs!"
-  pp board
   # Find occupied spaces
   occupied_spaces = []
   snakes = board[:board][:snakes]
@@ -17,10 +16,27 @@ def move(board)
   pp occupied_spaces
 
   #Dont automatically die
-  moves = [:left, :right, :up, :down]
+  moves = []
   head_position = board[:you][:body][0]
   puts "Head Position"
   pp head_position
+  #Stay on the BOARD!
+  #Check Left
+  if head_position[:x] != 0
+  	moves << :left
+  end
+  #Check right
+  if head_position[:x] != 10
+  	moves << :right
+  end
+  #Check up
+  if head_position[:y] != 0
+  	moves << :up
+  end  
+  #Check down
+  if head_position[:y] != 10
+  	moves << :down
+  end  
 
   #Reply with my move
   { move: moves[0] }
