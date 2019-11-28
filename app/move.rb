@@ -53,6 +53,6 @@ def move(board)
   end
   #Reply with my move
 
-  pp "Best Food: " +  best_food
+  pp "Best Food: " +  best_food.to_s
   { move: moves[0] }
 end
