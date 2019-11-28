@@ -37,39 +37,40 @@ def move(board)
   end
 
   health = board[:you][:health]
-  pp "HEALTH + " + health.to_s
-  #We now know the immediately safe moves.  Lets look for food.
-  puts "Finding Food"
-  food = board[:board][:food]
-  best_food = {}
-  min_food_distance = 1000
-  food.each do |food_position|
-  	food_distance = (food_position[:y] - head_position[:y]).abs + (food_position[:x] - head_position[:x]).abs
-  	if food_distance < min_food_distance
-  		min_food_distance = food_distance
-  		best_food = food_position
-  	end
-  		
-  end
-  #Go This direction
-  if best_food == {}
-  	best_food = {:x => 5, :y => 5}
-  end
-  pp "Best Food: " +  best_food.to_s
-  pp moves
-  pp best_food[:x]
-  pp head_position[:x]
+  pp "HEALTH: " + health.to_s
   best_move = moves[0]
-  if best_food[:x] > head_position[:x] and moves.include?(:right)
-  	best_move = :right
-  elsif best_food[:x] < head_position[:x] and moves.include?(:left)
-  	best_move = :left
-  elsif best_food[:y] < head_position[:y] and moves.include?(:up)
-  	best_move = :up
-  elsif best_food[:y] > head_position[:y] and moves.include?(:down)
-  	best_move = :down
-  end
-
+  if health < 50
+	  #We now know the immediately safe moves.  Lets look for food.
+	  puts "Finding Food"
+	  food = board[:board][:food]
+	  best_food = {}
+	  min_food_distance = 1000
+	  food.each do |food_position|
+	  	food_distance = (food_position[:y] - head_position[:y]).abs + (food_position[:x] - head_position[:x]).abs
+	  	if food_distance < min_food_distance
+	  		min_food_distance = food_distance
+	  		best_food = food_position
+	  	end
+	  		
+	  end
+	  #Go This direction
+	  if best_food == {}
+	  	best_food = {:x => 5, :y => 5}
+	  end
+	  pp "Best Food: " +  best_food.to_s
+	  pp moves
+	  pp best_food[:x]
+	  pp head_position[:x]
+	  if best_food[:x] > head_position[:x] and moves.include?(:right)
+	  	best_move = :right
+	  elsif best_food[:x] < head_position[:x] and moves.include?(:left)
+	  	best_move = :left
+	  elsif best_food[:y] < head_position[:y] and moves.include?(:up)
+	  	best_move = :up
+	  elsif best_food[:y] > head_position[:y] and moves.include?(:down)
+	  	best_move = :down
+	  end
+	end
   #Reply with my move
 
   { move: best_move }
