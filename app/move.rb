@@ -95,16 +95,26 @@ def move(board)
 			else
 				best_move = :down
 			end
-		elsif head_position[:x] > 8 && moves.include?(:left)
-			pp "Go Left"
-			pp head_position
-			pp moves
-			best_move = :left
-		elsif head_position[:x] < 2 && moves.include?(:right)
-			pp "Go Right"
-			pp head_position
-			pp moves
-			best_move = :right	
+		elsif head_position[:x] > 8
+			if moves.include?(:left)
+				best_move = :left
+			elsif moves.include?(:up)
+				best_move = :up
+			elsif moves.include?(:down)
+				best_move = :down
+			else
+				best_move = :right
+			end
+		elsif head_position[:x] < 2 
+			if moves.include?(:right)
+				best_move = :right
+			elsif moves.include?(:up)
+				best_move = :up
+			elsif moves.include?(:down)
+				best_move = :down
+			else
+				best_move = :left
+			end	
 		end	
 	end
 
