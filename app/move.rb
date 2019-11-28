@@ -76,18 +76,22 @@ def move(board)
 		pp moves
 #Not Hungry - Must Roam Open Spaces
 		if head_position[:y] < 2 && moves.include?(:down)
+			pp "Go Down"
 			pp head_position
 			pp moves
 			best_move = :down
 		elsif head_position[:y] > 8 && moves.include?(:up)
+			pp "Go Up"
 			pp head_position
 			pp moves
 			best_move = :up
 		elsif head_position[:x] > 8 && moves.include?(:left)
+			pp "Go Left"
 			pp head_position
 			pp moves
 			best_move = :left
 		elsif head_position[:x] < 2 && moves.include?(:right)
+			pp "Go Right"
 			pp head_position
 			pp moves
 			best_move = :right	
