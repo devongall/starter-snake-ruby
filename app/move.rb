@@ -2,6 +2,12 @@
 # View docs at https://docs.battlesnake.com/snake-api for example payloads.
 def move(board)
   puts "Hello, logs!"
-  pp board
+  occupied_spaces = []
+  board[:snakes].each do |snake|
+  	snake[:body].each do |body_part|
+  		pp body_part
+  	end
+  end
+  #pp board
   { move: :left }
 end
