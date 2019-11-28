@@ -22,7 +22,7 @@ def move(board)
   pp head_position
   #Stay on the BOARD!
   #Check Left
-  if head_position[:x] != 0 && occupied_spaces.any? {|position| (position[:y] == head_position[:y]) && position[:x] == (head_position[:x]-1)}
+  if head_position[:x] != 0 && !(occupied_spaces.any? {|position| (position[:y] == head_position[:y]) && position[:x] == (head_position[:x]-1)})
   	moves << :left
   end
   #Check right
