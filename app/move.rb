@@ -13,5 +13,5 @@ def move(board)
   #pp board
   #pp board[:board][:snakes]
   pp occupied_spaces
-  { move: :left }
+  { move: :right }
 end
