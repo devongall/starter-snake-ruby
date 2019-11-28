@@ -2,7 +2,7 @@
 # View docs at https://docs.battlesnake.com/snake-api for example payloads.
 def move(board)
   puts "Hello, logs!"
-  #pp board
+  pp board
   # Find occupied spaces
   occupied_spaces = []
   snakes = board[:board][:snakes]
