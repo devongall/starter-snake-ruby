@@ -26,7 +26,7 @@ def move(board)
   	moves << :left
   end
   #Check right
-  if head_position[:x] != 10
+  if head_position[:x] != 10 && !(occupied_spaces.any? {|position| (position[:y] == head_position[:y]) && position[:x] == (head_position[:x]+1)})
   	moves << :right
   end
   #Check up
