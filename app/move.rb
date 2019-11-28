@@ -46,6 +46,7 @@ def move(board)
   food.each do |food_position|
   	food_distance = (food_position[:y] - head_position[:y]).abs + (food_position[:x] - head_position[:x]).abs
   	if food_distance < min_food_distance
+  		min_food_distance = food_distance
   		pp food_distance
   		pp "Best Food: " +  best_food.to_s
   		best_food = food_position
