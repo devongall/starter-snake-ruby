@@ -39,7 +39,7 @@ def move(board)
   health = board[:you][:health]
   pp "HEALTH: " + health.to_s
   best_move = moves[0]
-  if health < 50
+    if health < 50
 	  #We now know the immediately safe moves.  Lets look for food.
 	  puts "Finding Food"
 	  food = board[:board][:food]
@@ -70,8 +70,22 @@ def move(board)
 	  elsif best_food[:y] > head_position[:y] and moves.include?(:down)
 	  	best_move = :down
 	  end
+    else
+    	pp "NOT HUNGRY"
+#Not Hungry - Must Roam Open Spaces
+		if head_position[:y] < 2 && moves.include?(:down)
+			best_move = :down
+		elsif head_position[:y] > 8 && moves.include?(:up)
+			best_move = :up
+		elsif head_position[:x] > 8 && moves.include?(:left)
+			best_move = :left
+		elsif head_position[:x] < 2 && moves.include?(:right)
+			best_move = :right	
+		end	
 	end
-  #Reply with my move
 
+
+
+  #Reply with my move
   { move: best_move }
 end
