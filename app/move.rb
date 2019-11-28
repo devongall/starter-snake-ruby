@@ -39,7 +39,7 @@ def move(board)
   end
 
   #We now know the immediately safe moves.  Lets look for food.
-  puts "Board Details"
+  puts "Finding Food"
   food = board[:board][:food]
   best_food = {}
   min_food_distance = 1000
@@ -50,8 +50,8 @@ def move(board)
   		best_food = food_position
   	end
   		#Go This direction
-  		pp "Best Food: " +  best_food.to_s
   end
+  pp "Best Food: " +  best_food.to_s
   #Reply with my move
 
   { move: moves[0] }
