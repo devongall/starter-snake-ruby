@@ -2,8 +2,8 @@
 # View docs at https://docs.battlesnake.com/snake-api for example payloads.
 def move(board)
   puts "Hello, logs!"
+  # Find occupied spaces
   occupied_spaces = []
-  pp board
   snakes = board[:board][:snakes]
   snakes.each do |snake|
   	snake[:body].each do |body_part|
@@ -13,6 +13,11 @@ def move(board)
   #pp board
   #pp board[:board][:snakes]
   occupied_spaces = occupied_spaces.uniq
+  puts "Occupied Spaces"
   pp occupied_spaces
-  { move: :right }
+
+  #Dont automatically die
+  moves = [:left, :right, :up, :down]
+  pp moves
+  { move: moves[0] }
 end
