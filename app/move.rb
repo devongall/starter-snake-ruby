@@ -38,6 +38,9 @@ def move(board)
   	moves << :down
   end
 
+  #We now know the immediately safe moves.  Lets look for food.
+  pp board[:board]
+
   #Reply with my move
   { move: moves[0] }
 end
