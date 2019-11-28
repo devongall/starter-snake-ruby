@@ -10,6 +10,6 @@ def move(board)
 #  		pp body_part
 #  	end
 #  end
-  pp board(:snakes)
+  pp board[:snakes]
   { move: :left }
 end
