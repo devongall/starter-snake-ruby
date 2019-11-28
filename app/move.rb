@@ -12,8 +12,6 @@ def move(board)
   end
   #pp board[:board][:snakes]
   occupied_spaces = occupied_spaces.uniq
-  puts "Occupied Spaces"
-  pp occupied_spaces
 
   #Dont automatically die
   moves = []
@@ -53,6 +51,7 @@ def move(board)
   end
   #Go This direction
   pp "Best Food: " +  best_food.to_s
+  pp moves
   best_move = moves[0]
   if best_food[:x] > head_position[:x] and moves.include?(:right)
   	best_move = :right
