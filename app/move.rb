@@ -41,6 +41,7 @@ def move(board)
   #We now know the immediately safe moves.  Lets look for food.
   puts "Board Details"
   food = board[:board][:food]
+  pp food
   min_food_distance = 1000
   food.each do |food_position|
   	food_distance = (food_position[:y] - head_position[:y]).abs + (food_position[:x] - head_position[:x]).abs
