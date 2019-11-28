@@ -51,7 +51,7 @@ def move(board)
   		
   end
   #Go This direction
-  if best_food == nil
+  if best_food == {}
   	best_food = {:x => 5, :y => 5}
   end
   pp "Best Food: " +  best_food.to_s
