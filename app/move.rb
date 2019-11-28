@@ -3,7 +3,7 @@
 def move(board)
   puts "Hello, logs!"
   occupied_spaces = []
-  #pp board
+  pp board
   snakes = board[:board][:snakes]
   snakes.each do |snake|
   	snake[:body].each do |body_part|
