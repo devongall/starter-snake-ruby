@@ -7,10 +7,11 @@ def move(board)
   snakes = board[:board][:snakes]
   snakes.each do |snake|
   	snake[:body].each do |body_part|
-  		pp body_part
+  		occupied_spaces << body_part
   	end
   end
   #pp board
   #pp board[:board][:snakes]
+  pp occupied_spaces
   { move: :left }
 end
