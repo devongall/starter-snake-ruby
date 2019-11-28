@@ -36,7 +36,8 @@ def move(board)
   	moves << :down
   end
 
-  pp board
+  health = board[:you][:health]
+  pp "HEALTH + " + health.to_s
   #We now know the immediately safe moves.  Lets look for food.
   puts "Finding Food"
   food = board[:board][:food]
