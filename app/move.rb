@@ -30,11 +30,11 @@ def move(board)
   	moves << :right
   end
   #Check up
-  if head_position[:y] != 0
+  if head_position[:y] != 0 && !(occupied_spaces.any? {|position| (position[:x] == head_position[:x]) && position[:y] == (head_position[:y]+1)})
   	moves << :up
   end  
   #Check down
-  if head_position[:y] != 10
+  if head_position[:y] != 10 && !(occupied_spaces.any? {|position| (position[:x] == head_position[:x]) && position[:y] == (head_position[:y]-1)})
   	moves << :down
   end
 
