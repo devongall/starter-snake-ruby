@@ -3,5 +3,5 @@
 def move(board)
   puts "Hello, logs!"
   pp board
-  { move: :up }
+  { move: :left }
 end
