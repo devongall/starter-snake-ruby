@@ -18,8 +18,9 @@ def move(board)
 
   #Dont automatically die
   moves = [:left, :right, :up, :down]
-  pp board[:you]
-
+  head_position = board[:you][:body][0]
+  puts "Head Position"
+  pp head_position
 
   #Reply with my move
   { move: moves[0] }
