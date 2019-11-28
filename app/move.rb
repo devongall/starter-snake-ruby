@@ -39,6 +39,7 @@ def move(board)
   end
 
   #We now know the immediately safe moves.  Lets look for food.
+  puts "Board Details"
   pp board[:board]
 
   #Reply with my move
