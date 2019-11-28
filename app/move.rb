@@ -18,7 +18,7 @@ def move(board)
 
   #Dont automatically die
   moves = [:left, :right, :up, :down]
-
+  pp board[:you]
 
 
   #Reply with my move
