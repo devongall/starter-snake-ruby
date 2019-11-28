@@ -72,6 +72,8 @@ def move(board)
 	  end
     else
     	pp "NOT HUNGRY"
+    	pp head_position
+		pp moves
 #Not Hungry - Must Roam Open Spaces
 		if head_position[:y] < 2 && moves.include?(:down)
 			pp head_position
