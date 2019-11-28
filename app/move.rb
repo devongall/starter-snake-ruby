@@ -33,6 +33,7 @@ def move(board)
   end  
   #Check down
   if head_position[:y] != 10 && !(occupied_spaces.any? {|position| (position[:x] == head_position[:x]) && position[:y] == (head_position[:y]-1)})
+  	pp "Safe to go down"
   	moves << :down
   end
 
