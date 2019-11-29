@@ -1,5 +1,7 @@
-# TODO: Implement your logic here!
-# View docs at https://docs.battlesnake.com/snake-api for example payloads.
+# TODO: Avoid Head on collisions
+# TODO: Implement a search for open spaces - currently just looking 
+
+
 def move(board)
   puts "Hello, logs!"
   # Find occupied spaces
@@ -71,10 +73,7 @@ def move(board)
 	  	best_move = :down
 	  end
     else
-    	pp "NOT HUNGRY"
-    	pp head_position
-		pp moves
-#Not Hungry - Must Roam Open Spaces
+#Not Hungry - Stay away from Walls
 		if head_position[:y] < 2
 			if moves.include?(:down)
 				best_move = :down
@@ -113,6 +112,11 @@ def move(board)
 			elsif moves.include?(:down)
 				best_move = :down
 			else
+				#Not near the wall - seek open space
+				pp "NOT NEAR WALL - SEEK OPEN GRASSES"
+				head_x = head_position[:x]
+				head_y = head_position[:y]
+
 				best_move = :left
 			end	
 		end	
