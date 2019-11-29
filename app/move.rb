@@ -112,13 +112,13 @@ def move(board)
 			elsif moves.include?(:down)
 				best_move = :down
 			else
-				#Not near the wall - seek open space
-				pp "NOT NEAR WALL - SEEK OPEN GRASSES"
-				head_x = head_position[:x]
-				head_y = head_position[:y]
-
 				best_move = :left
 			end	
+		else
+			#Not near the wall - seek open space
+			pp "NOT NEAR WALL - SEEK OPEN GRASSES"
+			head_x = head_position[:x]
+			head_y = head_position[:y]
 		end	
 	end
 
